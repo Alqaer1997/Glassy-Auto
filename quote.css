@@ -1,7 +1,5 @@
 /* Set sky blue background */
-{
-  box-sizing: border-box;
-}
+
 body {
     margin: 0;
     /* إزالة الهوامش */
@@ -19,6 +17,8 @@ body {
 
 html,
 body {
+  margin: 0;
+  padding: 0;
     overflow-x: hidden;
     width: 100%;
 }
@@ -272,14 +272,17 @@ h1 {
 .image {
     position: relative;
     /* جعل الصورة في موضع نسبي */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 8px;
 }
 
 
 
 .image img {
-    max-width: 100%;
-    border-radius: 10px;
-    height: auto;
+    width: 100%;
+  height: auto;
+  border-radius: 10px;
   display: block;
 }
 
