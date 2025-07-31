@@ -1,5 +1,7 @@
 /* Set sky blue background */
-
+{
+  box-sizing: border-box;
+}
 body {
     margin: 0;
     /* إزالة الهوامش */
@@ -9,6 +11,7 @@ body {
     /* خط افتراضي */
     background-color: #f5f6f7;
     /* light gray background */
+    overflow-x: hidden;
 }
 
 
@@ -271,28 +274,13 @@ h1 {
     /* جعل الصورة في موضع نسبي */
 }
 
-.circle-bg {
-    position: absolute;
-    /* جعل الخلفية دائرية */
-    width: 410px;
-    /* عرض الخلفية */
-    height: 410px;
-    /* ارتفاع الخلفية */
-    background: linear-gradient(135deg, #6a11cb, #2575fc);
-    /* تدرج لوني للخلفية */
-    border-radius: 50%;
-    /* جعل الخلفية دائرية */
-    top: -50px;
-    /* إزاحة الخلفية لأعلى */
-    right: -100px;
-    /* إزاحة الخلفية لليمين */
-    z-index: -1;
-    /* جعل الخلفية خلف المحتوى */
-}
+
 
 .image img {
-    max-width: 300px;
+    max-width: 100%;
     border-radius: 10px;
+    height: auto;
+  display: block;
 }
 
 
