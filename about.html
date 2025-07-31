@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" href="22.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="about.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="container">
+            <div class="picture">
+                <img src="22.jpg" alt="Glassy Auto Icon">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">GLASSY AUTO</span>
+                </a>
+            </div>
+
+            <!-- زر القائمة -->
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+
+            <div class="dropdown">
+                <a href="index.html" class="services-link">Services ▾</a>
+                <div class="dropdown-menu">
+                    <a href="quote.html">Windshield Replacement</a>
+                    <a href="quote.html">Chip & Crack Repair</a>
+                    <a href="quote.html">Side/Rear Glass</a>
+                    <a href="quote.html">Window Motor Repair</a>
+                    <a href="quote.html">ADAS Calibration</a>
+                    <a href="quote.html">Fleet Services</a>
+                    <a href="quote.html">Insurance Help</a>
+                </div>
+            </div>
+
+            <a href="quote.html">Get a Quote</a>
+
+            <div class="dropdown">
+                <a href="#" class="services-link">Follow us ▾</a>
+                <div class="dropdown-menu">
+                    <a href="https://www.instagram.com/glassyauto/" target="_blank">Instagram</a>
+                    <a href="https://www.tiktok.com/@glassyauto" target="_blank">TikTok</a>
+                    <a href="https://wa.me/5484684336" target="_blank">WhatsApp</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Who We Are</h1>
+
+        </div>
+        <div class="social-icons">
+            <a href="https://www.instagram.com/glassyauto/" target="_blank"><img src="insta.png" alt="Instagram" class="social-icon"></a>
+            <a href="https://www.tiktok.com/@glassyauto" target="_blank"><img src="tiktok.png" alt="TikTok" class="social-icon"></a>
+            <a href="https://wa.me/5484684336" target="_blank"><img src="whatsapp.png" alt="WhatsApp" class="social-icon"></a>
+        </div>
+    </section>
+    <!-- gallery Section -->
+    <div class="gallery">
+        <img src="200.jpg" alt="Gallery Image 1">
+        <img src="201.jpg" alt="Gallery Image 2">
+        <img src="203.jpg" alt="Gallery Image 4">
+        <img src="1111.jpg" alt="Gallery Image 5">
+        <img src="205.jpg" alt="Gallery Image 6">
+        <img src="206.jpg" alt="Gallery Image 7">
+    </div>
+    <div class="lightbox" id="lightbox">
+        <img src="" alt="expanded image">
+    </div>
+    <!-- Lightbox for Image Expansion -->
+
+    <!-- About Section -->
+    <section class="about">
+        <h2>About Us</h2>
+        <p>Welcome to Glassy Auto — Where Clarity Meets Quality.</p>
+        <p>At Glassy Auto, we’re not just in the business of repairing glass<br>we’re in the business of restoring confidence on the road.<br> With years of hands-on experience, our team specializes in windshield repair,<br> replacement, and complete automotive
+            glass solutions tailored to your vehicle’s needs.
+        </p>
+        <p>We know that damaged glass isn’t just a nuisance<br>it’s a safety issue. That’s why we’re committed to using premium materials,<br>precise installation techniques, and fast, reliable service to get you back on the road safely.<br> Whether it’s
+            a small chip or a full replacement, our expert technicians treat every job with the attention it deserves.
+        </p>
+        <p>Proudly serving our local community, Glassy Auto blends professionalism with a personal touch.<br>We value transparency, integrity, and excellence in everything we do—because our reputation is built on your satisfaction.
+        </p>
+        <p>Discover the difference with Glassy Auto. Your view deserves to be flawless.</p>
+    </section>
+    <!-- button -->
+    <div class="quote-button">
+        <a href="quote.html">FREE QUOTE</a>
+    </div>
+
+    <section class="hero">
+        <h1 class="title">
+            THE BEST CHOICE<br> Precision. Speed. Clarity.<br> That's Our Promise
+        </h1>
+    </section>
+    <script>
+        const toggleButton = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+
+
+</body>
+<footer>
+    <div class="footer-container">
+
+        <!-- Logo & Company Info -->
+        <div class="footer-box company">
+            <img src="22.jpg" alt="Auto Glass Logo" class="logo" />
+        </div>
+
+        <!-- Service Areas -->
+        <div class="footer-box box-with-line">
+            <h3>Service Areas</h3>
+            <ul>
+                <li>London</li>
+                <li>Kitchener</li>
+                <li>Guelph</li>
+                <li>Cambridge</li>
+                <li>Waterloo</li>
+                <li>Woodstock</li>
+                <li>St.Thomas</li>
+                <li>Strathroy</li>
+                <li>Brantford</li>
+            </ul>
+        </div>
+
+        <!-- Site Links -->
+        <div class="footer-box box-with-line">
+
+            <h3>Site Links</h3>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="quote.html">Get A Quote</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-box contact">
+            <h3>Contact Info</h3>
+            <div class="contact-item">
+                <img src="location.png" alt="location" class="icon" />
+                <span>Serving all of London and the Southwestern Ontario Area</span>
+            </div>
+            <div class="contact-item">
+                <img src="call1.png" alt="phone" class="icon" />
+                <span>548-468-4336</span>
+            </div>
+            <div class="contact-item">
+                <img src="email.png" alt="email" class="icon" />
+                <span>glassyautomobile@gmail.com</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025. All rights reserved.</p>
+    </div>
+</footer>

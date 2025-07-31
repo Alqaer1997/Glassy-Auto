@@ -1,0 +1,647 @@
+/* Set sky blue background */
+
+body {
+    margin: 0;
+    /* إزالة الهوامش */
+    padding: 0;
+    /* إزالة الهوامش والحشو */
+    font-family: Arial, sans-serif;
+    /* خط افتراضي */
+    background-color: #f5f6f7;
+    /* light gray background */
+}
+
+
+/* منع التمرير الجانبي */
+
+html,
+body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+
+/* تأكد من أن كل العناصر لا تتجاوز عرض الشاشة */
+
+* {
+    box-sizing: border-box;
+    max-width: 100%;
+}
+
+
+/* تخطيط مرن باستخدام Flexbox */
+
+header,
+main,
+footer {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f0f0f0;
+    border-radius: 8px;
+}
+
+.navbar {
+    font-family: serif;
+    /* خط سيريف */
+    display: flex;
+    font-weight: bold;
+    /* جعل الخط عريض */
+    justify-content: space-between;
+    /* توزيع العناصر بالتساوي */
+    align-items: center;
+    /* محاذاة العناصر عموديًا */
+    background-color: #2e5d79;
+    /* لون خلفية شريط التنقل */
+    padding: 1rem 2rem;
+    /* حشو شريط التنقل */
+    color: #1674aa;
+    /* لون الخط */
+    position: sticky;
+    /* جعل شريط التنقل ثابتًا */
+    top: 0;
+    /* تثبيته في أعلى الصفحة */
+    z-index: 1000;
+    /* جعل شريط التنقل فوق العناصر الأخرى */
+}
+
+
+/* تنسيق شعار الموقع */
+
+
+/* Container holding image and logo text */
+
+.container {
+    font-size: 36px;
+    /* حجم الخط */
+    display: flex;
+    /* استخدام flexbox */
+    align-items: center;
+    /* محاذاة العناصر في المنتصف عموديًا */
+    gap: 10px;
+    /* مسافة بين العناصر */
+    background-image: linear-gradient(to right, #41b2f3, #faf7f7);
+    /* تدرج لوني للخلفية */
+    background-clip: text;
+    /* يجعل التدرج يغطي النص */
+    -webkit-background-clip: text;
+    /* لجعل التدرج يعمل في متصفحات WebKit */
+    -webkit-text-fill-color: transparent;
+    /* يجعل لون النص شفافًا */
+    /* لكي يظهر التدرج */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+/* Optional styling for the picture */
+
+.picture img {
+    width: 40px;
+    /* Set width of the image */
+    height: 40px;
+    /* Set width and height of the image */
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+    border-radius: 6px;
+    /* Adds rounded corners to the image */
+}
+
+.nav-links {
+    display: flex;
+    /* يجعل العناصر في صف أفقي */
+    align-items: center;
+    /* يوسّط العناصر عموديًا داخل الشريط */
+    gap: 30px;
+    /* مسافة بين الروابط */
+}
+
+
+/* روابط التنقل الأساسية */
+
+.nav-links a,
+.services-link {
+    text-decoration: none;
+    /* إزالة الخط من الروابط */
+    color: #1674aa;
+    /* لون الروابط */
+    font-size: 14px;
+    /* حجم الخط */
+    text-transform: uppercase;
+    /* تحويل النص إلى أحرف كبيرة */
+    transition: color 0.3s ease;
+    /* تأثير انتقال سلس عند تغيير اللون */
+    padding: 10px;
+    /* حشو حول الروابط */
+    display: inline-block;
+    /* يجعل الروابط ككتل */
+    background-image: linear-gradient(to right, #41b2f3, #faf7f7);
+    /* تدرج لوني للخلفية */
+    background-clip: text;
+    /* يجعل التدرج يغطي النص */
+    -webkit-background-clip: text;
+    /* لجعل التدرج يعمل في متصفحات WebKit */
+    -webkit-text-fill-color: transparent;
+    /* يجعل لون النص شفافًا */
+    /* لكي يظهر التدرج */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+
+/* عند المرور */
+
+.nav-links a:hover,
+.services-link:hover {
+    color: #1674aa;
+    /* تغيير لون الروابط عند المرور */
+}
+
+
+/* القائمة المنسدلة */
+
+.dropdown {
+    position: relative;
+    /* جعل القائمة المنسدلة في موضع نسبي */
+}
+
+.dropdown-menu {
+    position: absolute;
+    /* جعل القائمة المنسدلة في موضع مطلق */
+    top: 100%;
+    /* وضع القائمة المنسدلة تحت الرابط */
+    left: 0;
+    /* محاذاة القائمة المنسدلة إلى اليسار */
+    flex-direction: column;
+    /* ترتيب الخيارات عموديًا */
+    display: flex;
+    /* جعل القائمة مرئية */
+    opacity: 0;
+    /* جعل القائمة غير مرئية بشكل افتراضي */
+    visibility: hidden;
+    /* إخفاء القائمة */
+    transform: translateY(10px);
+    /* إزاحة القائمة لأسفل */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    /* تأثير انتقال سلس عند الظهور */
+    z-index: 999;
+    /* جعل القائمة فوق العناصر الأخرى */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    /* إضافة ظل للقائمة */
+}
+
+.dropdown-menu a {
+    padding: 10px 15px;
+    /* حشو حول الروابط */
+    color: white;
+    /* لون النص */
+    white-space: nowrap;
+    /* منع التفاف النص */
+    font-size: 14px;
+    /* حجم الخط */
+    text-transform: none;
+    /* عدم تحويل النص إلى أحرف كبيرة */
+    text-decoration: none;
+    /* إزالة التسطير */
+    background-color: #1674aa;
+    /* لون خلفية القائمة */
+    border-radius: 30px;
+    /* زوايا دائرية للقائمة */
+}
+
+.dropdown-menu a:hover {
+    background-color: #444;
+    /* تغيير لون الخلفية عند المرور */
+}
+
+
+/* تفعيل عند المرور */
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    /* جعل القائمة مرئية */
+    visibility: visible;
+    /* جعل القائمة مرئية */
+    transform: translateY(0);
+    /* إعادة القائمة إلى موضعها الأصلي */
+}
+
+
+/* Hero Section */
+
+.hero {
+    background: linear-gradient(to right, #00b4db, #15181a);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-top: 10px;
+}
+
+
+/* Social Icons */
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.social-icons img {
+    width: 40px;
+    /* العرض */
+    height: 40px;
+    /* الطول */
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.social-icons img:hover {
+    transform: scale(1.15);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+/*gallery section*/
+
+
+/* تنسيق شريط الصور */
+
+.gallery {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 50px;
+    overflow-x: auto;
+}
+
+.gallery img {
+    width: 100px;
+    height: auto;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.gallery img:hover {
+    transform: scale(1.1);
+}
+
+
+/* نافذة التكبير */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 80%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+
+/***to here***/
+
+.quote-button {
+    display: flex;
+    /* استخدام flexbox */
+    justify-content: center;
+    /* محاذاة العناصر في المنتصف أفقيًا */
+    align-items: flex-start;
+    /* محاذاة العناصر في المنتصف عموديًا */
+    height: 30vh;
+    /* يجعل الحاوية بارتفاع الشاشة بالكامل */
+}
+
+
+/* تنسيق الزر نفسه */
+
+.quote-button a {
+    display: inline-block;
+    /* يجعل الرابط كزر */
+    padding: 15px 30px;
+    /* حشو الزر */
+    background-color: #0e0f0f;
+    /* لون خلفية الزر */
+    color: #fff;
+    /* لون الخط */
+    font-size: 18px;
+    /* حجم الخط */
+    font-weight: bold;
+    /* جعل الخط عريض */
+    text-decoration: none;
+    /* إزالة التسطير */
+    border-radius: 8px;
+    /* إضافة زوايا دائرية للزر */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* إضافة ظل للزر */
+    transition: transform 0.2s, background-color 0.3s;
+    /* تأثيرات التحول عند التمرير */
+}
+
+.quote-button a:hover {
+    background-color: #1674aa;
+    /* تغيير لون الخلفية عند التمرير */
+    transform: scale(1.05);
+    /* تكبير الزر قليلاً عند التمرير */
+}
+
+
+/* About Section */
+
+.about {
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+
+/**to here**/
+
+
+/* Hero Section */
+
+.hero-section {
+    display: flex;
+    /* استخدام flexbox */
+    justify-content: center;
+    /* محاذاة العناصر في المنتصف أفقيًا */
+    align-items: center;
+    /* محاذاة العناصر في المنتصف عموديًا */
+    height: 60vh;
+    /* ارتفاع القسم */
+    background: linear-gradient(to right, #00bcd4, #111);
+    /* تدرج لوني للخلفية */
+    color: white;
+    /* لون النص */
+    text-align: center;
+    /* محاذاة النص في المنتصف */
+    padding: 0 1rem;
+    /* حشو جانبي */
+}
+
+footer {
+    padding: 40px 20px;
+    /* حشو الفوتر */
+    background-color: #070707;
+    /* لون خلفية الفوتر */
+    max-width: 1200px;
+    /* أقصى عرض للفوتر */
+    margin: auto;
+    /* محاذاة الفوتر في المنتصف */
+}
+
+.footer-container {
+    display: flex;
+    /* استخدام flexbox */
+    flex-wrap: wrap;
+    /* السماح بتغليف العناصر */
+    gap: 0;
+    /* لا يوجد فراغ بين العناصر */
+    justify-content: space-between;
+    /* توزيع العناصر بالتساوي */
+    max-width: 1200px;
+    /* أقصى عرض للحاوية */
+    margin: auto;
+    /* محاذاة الحاوية في المنتصف */
+}
+
+
+/*ترتيب الحشو في الفوتر*/
+
+.footer-box {
+    flex: 1 1 220px;
+    /* تحديد عرض الصندوق */
+    padding: 20px;
+    /* حشو الصندوق */
+    box-sizing: border-box;
+    /* جعل الحشو يؤثر على الحجم الكلي للصندوق */
+}
+
+
+/* إضافة خطوط رأسية بين الأقسام */
+
+.footer-box:not(:last-child) {
+    border-right: 1px solid #0e0c0c;
+    /* خط عمودي بين الأقسام */
+}
+
+
+/*شريط القايمه تحت*/
+
+.footer-box h2,
+.footer-box h3 {
+    margin-top: 0;
+    /* مسافة بين العنوان العلوي والمحتوى */
+    margin-bottom: 10px;
+    /* مسافة بين العنوان والمحتوى */
+    color: #f5f7f8;
+    /* لون العنوان */
+}
+
+
+/* ايقونات الموقع */
+
+.contact-item {
+    display: flex;
+    /* استخدام flexbox */
+    align-items: center;
+    /* محاذاة العناصر في المنتصف عموديًا */
+    margin-bottom: 15px;
+    /* مسافة بين العناصر */
+    font-size: 16px;
+    /* حجم الخط */
+    color: #f5f7f8;
+    /* لون النص */
+    padding: 12px 0;
+    /* حشو علوي وسفلي */
+}
+
+.contact-item .icon {
+    width: 18px;
+    /* عرض الأيقونة */
+    height: 18px;
+    /* ارتفاع الأيقونة */
+    margin-right: 8px;
+    /* مسافة بين الأيقونة والنص */
+}
+
+
+/* لون المناطق */
+
+.footer-box p,
+.footer-box li,
+.footer-box a {
+    font-size: 14px;
+    /* حجم الخط */
+    color: #f5f7f8;
+    /* لون النص */
+    line-height: 1.6;
+    /* ارتفاع السطر */
+}
+
+
+/**********/
+
+
+/*لوجو في الفوتر*/
+
+.footer-box.company .logo {
+    max-width: 150px;
+    /* حجم الشعار */
+    height: auto;
+    /* ارتفاع تلقائي */
+    display: block;
+    /* جعل الشعار كتلة */
+    margin: 0 auto;
+    /* محاذاة الشعار في المنتصف */
+}
+
+
+/**********/
+
+
+/*ضبط شكل النص ظهور خط عند الضغط*/
+
+
+/*روابط المواقع*/
+
+a {
+    text-decoration: none;
+    /* إزالة التسطير */
+    color: #1674aa;
+    /* لون الروابط */
+}
+
+a:hover {
+    text-decoration: underline;
+    /* إضافة تسطير عند التمرير */
+}
+
+
+/**********/
+
+
+/* الحقوق اسفل الصفحه */
+
+.footer-bottom {
+    color: #f5f7f8;
+    /* لون النص */
+    font-family: Arial;
+    /* خط افتراضي */
+    text-align: center;
+    /* محاذاة النص في المنتصف */
+    padding: 15px 0;
+    /* حشو علوي وسفلي */
+    font-size: 16px;
+    /* حجم الخط */
+    width: 500px;
+    /* عرض الفوتر */
+    height: 70px;
+    /* ارتفاع الفوتر */
+    background-color: #1674aa;
+    /* لون خلفية الفوتر */
+    color: white;
+    /* لون النص */
+    display: flex;
+    /* استخدام flexbox */
+    align-items: center;
+    /* محاذاة العناصر في المنتصف عموديًا */
+    justify-content: center;
+    /* محاذاة العناصر في المنتصف أفقيًا */
+    font-size: 16px;
+    /* حجم الخط */
+    border-radius: 8px;
+    /* زوايا دائرية للفوتر */
+    margin: 40px auto;
+    /* مسافة بين الفوتر والمحتوى */
+}
+
+.footer-box {
+    background-color: #1674aa;
+    /* لون خلفية صندوق الفوتر */
+    box-shadow: 0 0 8px rgba(0, 0, 0.3);
+    /* إضافة ظل للصندوق */
+    border-radius: 8px;
+    /* زوايا دائرية للصندوق */
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #1674aa;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #111;
+        text-align: center;
+        margin-top: 10px;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        cursor: pointer;
+        color: white;
+    }
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .quote-button {
+        padding-left: 0;
+        flex-direction: column;
+    }
+    .nav-links a,
+    .dropdown {
+        width: 100%;
+        padding: 10px 0;
+    }
+    .dropdown-menu {
+        position: static;
+        box-shadow: none;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+    body {
+        padding: 10px;
+        /* تقليل الحشو في الشاشات الصغيرة */
+    }
+    h1 {
+        font-size: 22px;
+        /* تقليل حجم الخط في الشاشات الصغيرة */
+        text-align: center;
+        /* محاذاة العنوان في المنتصف */
+    }
+    p {
+        font-size: 16px;
+        /* تقليل حجم الخط في الشاشات الصغيرة */
+    }
+}
