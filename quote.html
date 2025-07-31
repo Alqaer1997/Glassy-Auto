@@ -70,8 +70,7 @@
 
     <!-- Font Awesome Icons -->
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
- 
- <script>
+  <script>
         const toggleButton = document.getElementById('menu-toggle');
         const navLinks = document.getElementById('nav-links');
 
@@ -80,6 +79,10 @@
         });
     </script>
     <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
     
 </body>
 </header>
