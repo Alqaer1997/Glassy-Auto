@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="icon" href="22.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="quote.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="container">
+            <div class="picture">
+                <img src="22.jpg" alt="Glassy Auto Icon">
+                <a href="index.html" class="logo-link">
+                    <span class="logo-text">GLASSY AUTO</span>
+                </a>
+            </div>
+            <!-- زر القائمة -->
+            <div class="menu-toggle" id="menu-toggle">☰</div>
+        </div>
+        </div>
+        <nav class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+
+            <div class="dropdown">
+                <a href="index.html" class="services-link">Services ▾</a>
+                <div class="dropdown-menu">
+                    <a href="quote.html">Windshield Replacement</a>
+                    <a href="quote.html">Chip & Crack Repair</a>
+                    <a href="quote.html">Side/Rear Glass</a>
+                    <a href="quote.html">Window Motor Repair</a>
+                    <a href="quote.html">ADAS Calibration</a>
+                    <a href="quote.html">Fleet Services</a>
+                    <a href="quote.html">Insurance Help</a>
+                </div>
+            </div>
+            <a href="quote.html">Get a Quote</a>
+            <div class="dropdown">
+                <a href="index.html" class="services-link">Follow us ▾</a>
+                <div class="dropdown-menu">
+                    <a href="https://www.instagram.com/glassyauto/" target="_blank">Instagram</a>
+                    <a href="https://www.tiktok.com/@glassyauto" target="_blank">TikTok</a>
+                    <a href="https://wa.me/5484684336" target="_blank">WhatsApp</a>
+                </div>
+        </nav>
+    </header>
+    <!-- text and picture  -->
+    <section class="heor">
+        <div class="content">
+            <p class="intro">Hey There! I</p>
+            <h1>Get Your Free Quote</h1>
+            <p class="subtitle">To fix your auto glass issues</p>
+
+            <a href="https://wa.me/5484684336" class="btn">Your Quote</a>
+            <div class="stats">
+
+            </div>
+        </div>
+        <div class="image">
+            <div class="circle-bg"></div>
+            <img src="quotewhatsapp.png" alt="Jo Breed" />
+        </div>
+    </section>
+
+    <!-- Font Awesome Icons -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script>
+        const toggleButton = document.getElementById('menu-toggle');
+        const navLinks = document.getElementById('nav-links');
+
+        toggleButton.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+    </script>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        }
+    </script>
+</body>
+</header>
+<footer>
+    <div class="footer-container">
+
+        <!-- Logo & Company Info -->
+        <div class="footer-box company">
+            <img src="22.jpg" alt="Auto Glass Logo" class="logo" />
+        </div>
+
+        <!-- Service Areas -->
+        <div class="footer-box box-with-line">
+            <h3>Service Areas</h3>
+            <ul>
+                <li>London</li>
+                <li>Kitchener</li>
+                <li>Guelph</li>
+                <li>Cambridge</li>
+                <li>Waterloo</li>
+                <li>Woodstock</li>
+                <li>St.Thomas</li>
+                <li>Strathroy</li>
+                <li>Brantford</li>
+            </ul>
+        </div>
+
+        <!-- Site Links -->
+        <div class="footer-box box-with-line">
+
+            <h3>Site Links</h3>
+            <ul>
+                <li><a href="about.html">About</a></li>
+                <li><a href="quote.html">Get A Quote</a></li>
+            </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="footer-box contact">
+            <h3>Contact Info</h3>
+            <div class="contact-item">
+                <img src="location.png" alt="location" class="icon" />
+                <span>Serving all of London and the Southwestern Ontario Area</span>
+            </div>
+            <div class="contact-item">
+                <img src="call1.png" alt="phone" class="icon" />
+                <span>548-468-4336</span>
+            </div>
+            <div class="contact-item">
+                <img src="email.png" alt="email" class="icon" />
+                <span>glassyautomobile@gmail.com</span>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025. All rights reserved.</p>
+    </div>
+</footer>
